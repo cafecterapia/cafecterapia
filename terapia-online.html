@@ -1,46 +1,86 @@
-<!-- Copie o <head> e <header> do index.html para cá -->
-<!DOCTYPE html><html lang="pt-BR" style="scroll-behavior: smooth;"><head>...</head><body><header>...</header>
-<main>
-    <!-- Seção Hero da Página Interna -->
-    <section class="page-hero bg-bege-creme">
-        <div class="container narrow text-center">
-            <h1>Terapia Online Individual</h1>
-            <p class="subtitle">Um espaço seguro e confidencial, onde quer que você esteja, para cultivar seu bem-estar e autoconhecimento.</p>
-        </div>
-    </section>
+<!DOCTYPE html>
+<html lang="pt-BR" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palestras e Workshops - Lenny Santos</title>
+    <meta name="description" content="Palestras e workshops sobre saúde mental, resiliência e bem-estar para empresas, escolas e eventos. Leve uma conversa transformadora para sua equipe.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Lato:wght@400;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO GLOBAL -->
+    <header class="main-header">
+        <nav class="container">
+            <a href="index.html" class="logo">Lenny.</a>
+            <ul>
+                <li><a href="terapia-online.html">Terapia Online</a></li>
+                <li><a href="palestras.html">Palestras</a></li>
+                <li><a href="sobre.html">Sobre Mim</a></li>
+                <li><a href="#contato" class="nav-button">Agendar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- SEÇÃO 1: HERO (Fundo: Bege Creme #F5F0E9) -->
+        <section class="page-hero bg-bege-creme">
+            <div class="container narrow text-center">
+                <h1>Palestras e Workshops com Propósito</h1>
+                <p class="subtitle">Conversas que inspiram, cuidam e transformam. Leve o diálogo sobre saúde mental e resiliência para sua empresa, escola ou evento.</p>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: POR QUE? (Fundo: Bege Médio #DED6C9) -->
+        <section class="content-section bg-bege-medio reveal-on-scroll">
+            <div class="container narrow text-center">
+                <h2>Por que levar a saúde mental para o seu espaço?</h2>
+                <p>Investir no bem-estar emocional de equipes e comunidades não é apenas um benefício, é uma estratégia fundamental. Ambientes que priorizam a saúde mental promovem mais criatividade, reduzem o burnout, fortalecem a colaboração e criam uma cultura de segurança psicológica onde todos podem florescer.</p>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 3: TEMAS (Fundo: Bege Creme #F5F0E9) -->
+        <section id="temas" class="content-section bg-bege-creme reveal-on-scroll">
+            <div class="container">
+                <h2 class="text-center">Temas Abordados</h2>
+                <div class="topic-cards">
+                    <div class="card">
+                        <h3>A Arte de Florescer das Cicatrizes</h3>
+                        <p>Uma abordagem inspirada no Kintsugi para falar sobre resiliência, superação de traumas e a transformação da dor em propósito e força.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Cultivando a Pausa: Bem-estar na Era do Burnout</h3>
+                        <p>Estratégias práticas para lidar com o estresse e a sobrecarga, promovendo o autocuidado e limites saudáveis na vida pessoal e profissional.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Comunicação que Cura</h3>
+                        <p>Um workshop focado em desenvolver a escuta ativa, a empatia e a comunicação não-violenta para fortalecer relacionamentos e times.</p>
+                    </div>
+                     <div class="card">
+                        <h3>Saúde Mental Sem Tabus</h3>
+                        <p>Uma conversa aberta e informativa para desmistificar a terapia, falar sobre ansiedade e depressão e encorajar a busca por ajuda profissional.</p>
+                    </div>
+                </div>
+                <p class="text-center" style="margin-top: 2rem;">Os temas podem ser personalizados para atender às necessidades específicas do seu público.</p>
+            </div>
+        </section>
+        
+        <!-- SEÇÃO 4: CTA (Fundo: Marrom Café #4E423D) -->
+        <section class="content-section bg-marrom-cafe text-center reveal-on-scroll">
+             <div class="container narrow">
+                <h2>Vamos construir um evento com impacto?</h2>
+                <p>Estou à disposição para entender sua necessidade e desenhar uma experiência transformadora para sua equipe ou comunidade. Entre em contato para solicitar uma proposta.</p>
+                <a href="#contato" class="btn btn-inverted">Solicitar uma Proposta</a>
+            </div>
+        </section>
+    </main>
     
-    <!-- Seção 'Como Funciona' (Bege Médio) -->
-    <section class="content-section bg-bege-medio reveal-on-scroll">
-        <div class="container">
-            <h2 class="text-center">Como é o processo terapêutico comigo?</h2>
-            <!-- Colunas com os passos -->
-        </div>
-    </section>
-
-    <!-- Seção 'Para Quem?' (Bege Creme) -->
-    <section class="content-section bg-bege-creme reveal-on-scroll">
-        <div class="container narrow">
-            <h2 class="text-center">A terapia online é para você que...</h2>
-            <!-- Lista de itens (<ul>) -->
-        </div>
-    </section>
-
-    <!-- Seção FAQ (Bege Médio) -->
-    <section class="content-section bg-bege-medio reveal-on-scroll">
-        <div class="container narrow">
-            <h2 class="text-center">Dúvidas Frequentes</h2>
-            <!-- Componente de Accordion/Details -->
-        </div>
-    </section>
-
-    <!-- Seção CTA (Marrom Café) -->
-    <section class="content-section bg-marrom-cafe text-center reveal-on-scroll">
-         <div class="container narrow">
-            <h2>Pronto(a) para dar o primeiro passo?</h2>
-            <p>Sua saúde mental é um investimento em você. Vamos começar essa jornada juntos.</p>
-            <a href="#contato" class="btn btn-inverted">Agende sua conversa inicial</a>
-        </div>
-    </section>
-</main>
-<!-- Copie o <footer> e <script> do index.html para cá -->
-<footer>...</footer><script src="script.js"></script></body></html>
+    <!-- RODAPÉ GLOBAL -->
+    <footer id="contato" class="main-footer-section"> ... O mesmo conteúdo do rodapé do index.html ... </footer>
+    <script src="script.js"></script>
+</body>
+</html>
