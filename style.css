@@ -1,24 +1,17 @@
-/* PARTE 2: O SISTEMA DE DESIGN GLOBAL (CORRIGIDO) */
+/* PARTE 2: O SISTEMA DE DESIGN GLOBAL (FINAL) */
 /* ---------------------------------------------------- */
 
-/* 2.1: Definição da Paleta de Cores e Tipografia */
 :root {
-    /* Cores do Bloco, conforme a regra */
     --color-bege-creme: #F5F0E9;
     --color-bege-medio: #DED6C9;
     --color-marrom-cafe: #4E423D;
-    
-    /* Cor de Acento e Texto */
-    --color-accent: #C17B62;   /* Terracota para botões e links */
+    --color-accent: #C17B62;
+    --color-accent-transparent: rgba(193, 123, 98, 0.1);
     --text-color-dark: var(--color-marrom-cafe);
     --text-color-light: var(--color-bege-creme);
-
-    /* Fontes com Hierarquia (Google Fonts) */
     --font-heading: 'Poppins', sans-serif;
     --font-body: 'Lato', sans-serif;
-    --font-personal: 'Caveat', cursive; /* Apenas para assinaturas */
-
-    /* Escala Tipográfica Modular */
+    --font-personal: 'Caveat', cursive;
     --fs-h1: 2.8rem;
     --fs-h2: 2.125rem;
     --fs-h3: 1.5rem;
@@ -26,26 +19,11 @@
     --fs-large: 1.25rem;
 }
 
-/* Reset Básico e Padrões Globais */
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    background-color: var(--color-bege-creme); /* Cor padrão */
-    font-family: var(--font-body);
-    font-size: var(--fs-body);
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
+/* Reset Básico e Globals */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background-color: var(--color-bege-creme); font-family: var(--font-body); font-size: var(--fs-body); line-height: 1.7; -webkit-font-smoothing: antialiased; }
 .container { width: 90%; max-width: 1100px; margin: 0 auto; }
 .container.narrow { max-width: 720px; }
-
-/* 2.2: Sistema Tipográfico Detalhado */
 h1, h2, h3 { font-family: var(--font-heading); line-height: 1.3; margin-bottom: 1rem; }
 h1 { font-size: var(--fs-h1); font-weight: 700; }
 h2 { font-size: var(--fs-h2); font-weight: 600; }
@@ -54,130 +32,97 @@ h3 { font-size: var(--fs-h3); font-weight: 500; }
 p { margin-bottom: 1.2rem; }
 .text-center { text-align: center; }
 
-/* >>> REGRA DA ASSINATURA "LENNY SANTOS" <<< */
-.signature, .hero-signature {
-    font-family: var(--font-personal);
-    font-weight: 700;
-    line-height: 1.5;
-}
-.hero-signature {
-    font-size: 2.2rem;
-    color: rgba(245, 240, 233, 0.85); /* Bege creme com leve transparência */
-    margin-bottom: 1.5rem;
-    display: block;
-}
-.signature {
-    font-size: 1.8rem;
-    color: var(--color-accent);
-    display: block;
-    margin-top: 1rem;
-}
+/* REGRA DA ASSINATURA & TYPEWRITER */
+.signature, .hero-signature { font-family: var(--font-personal); font-weight: 700; line-height: 1.5; }
+.hero-signature { font-size: 2.2rem; color: rgba(245, 240, 233, 0.85); margin-bottom: 1.5rem; display: block; }
+.signature { font-size: 1.8rem; color: var(--color-accent); display: block; margin-top: 1rem; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+#typewriter-container { min-height: 420px; }
+#typewriter-target::after { content: '▋'; display: inline-block; animation: blink 0.7s infinite; color: var(--color-accent); margin-left: 2px; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+#typewriter-target.finished-typing::after { display: none; }
 
+/* BLOCOS DE COR */
+.content-section { padding: 6rem 1rem; }
+.bg-bege-creme { background-color: var(--color-bege-creme); color: var(--text-color-dark); }
+.bg-bege-medio { background-color: var(--color-bege-medio); color: var(--text-color-dark); }
+.bg-marrom-cafe { background-color: var(--color-marrom-cafe); color: var(--text-color-light); }
+.bg-marrom-cafe h1, .bg-marrom-cafe h2, .bg-marrom-cafe h3 { color: var(--text-color-light); }
+.bg-marrom-cafe .subtitle, .bg-marrom-cafe p { color: rgba(245, 240, 233, 0.85); }
+.page-hero { padding: 5rem 1rem; }
 
-/* >>> REGRA DA ESTRUTURA EM "BLOCOS DE COR" <<< */
-.content-section {
-    padding: 6rem 1rem;
-}
-.bg-bege-creme {
-    background-color: var(--color-bege-creme);
-    color: var(--text-color-dark);
-}
-.bg-bege-medio {
-    background-color: var(--color-bege-medio);
-    color: var(--text-color-dark);
-}
-.bg-marrom-cafe {
-    background-color: var(--color-marrom-cafe);
-    color: var(--text-color-light);
-}
-/* Garante que títulos e parágrafos dentro de blocos escuros usem texto claro */
-.bg-marrom-cafe h1, .bg-marrom-cafe h2, .bg-marrom-cafe h3, .bg-marrom-cafe p {
-    color: var(--text-color-light);
-}
-.bg-marrom-cafe .subtitle, .bg-marrom-cafe p {
-    color: rgba(245, 240, 233, 0.85);
-}
-
-
-/* ---------------------------------------------------- */
-/* PARTE 3: COMPONENTES E SEÇÕES ESPECÍFICAS */
-/* ---------------------------------------------------- */
-
-/* Header */
-.main-header { padding: 1.5rem 0; background-color: rgba(245, 240, 233, 0.85); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 10; border-bottom: 1px solid rgba(78, 66, 61, 0.1); }
+/* HEADER & NAVEGAÇÃO */
+.main-header { padding: 1rem 0; background-color: rgba(245, 240, 233, 0.85); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 10; border-bottom: 1px solid rgba(78, 66, 61, 0.1); transition: all 0.3s ease-in-out; }
+.main-header.scrolled { padding-top: 0.75rem; padding-bottom: 0.75rem; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); }
 .main-header .container { display: flex; justify-content: space-between; align-items: center; }
 .logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.8rem; color: var(--text-color-dark); text-decoration: none; }
-.main-header nav ul { list-style: none; display: flex; gap: 2.5rem; align-items: center; }
-.main-header nav a { color: var(--text-color-dark); font-weight: 500; text-decoration: none; transition: color 0.3s; }
-.main-header nav a:hover { color: var(--color-accent); }
-.nav-button { background-color: var(--color-accent); color: var(--text-color-light); padding: 0.6rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; }
-.nav-button:hover { filter: brightness(1.1); transform: scale(1.05); }
+.nav-menu ul { list-style: none; display: flex; gap: 0.5rem; align-items: center; margin:0; padding: 0;}
+.nav-menu ul a { color: var(--text-color-dark); font-weight: 500; text-decoration: none; padding: 0.6rem 1.2rem; border-radius: 50px; transition: background-color 0.3s ease, color 0.3s ease; }
+.nav-menu ul a:not(.nav-button):hover, .nav-menu ul a.active { background-color: var(--color-accent-transparent); }
+.nav-button { background-color: var(--color-accent); color: var(--text-color-light); }
+.nav-button:hover { filter: brightness(1.1); transform: scale(1.05); color: var(--text-color-light) !important; }
+.nav-toggle { display: none; background: transparent; border: none; cursor: pointer; padding: 0; z-index: 1000; }
+.hamburger { display: block; position: relative; width: 25px; height: 3px; background-color: var(--text-color-dark); transition: all 0.3s ease; }
+.hamburger::before, .hamburger::after { content: ''; position: absolute; left: 0; width: 100%; height: 3px; background-color: var(--text-color-dark); transition: all 0.3s ease; }
+.hamburger::before { top: -8px; }
+.hamburger::after { bottom: -8px; }
 
-/* Seção 1: Herói da Home */
-.hero-home {
-    height: 95vh;
-    min-height: 700px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--text-color-light);
-    background-image: url('https://images.unsplash.com/photo-1594744806543-92a21782ebbf?q=80&w=1887&auto=format&fit=crop'); /* Imagem empática */
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    padding: 1rem;
-}
-.hero-home::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-    background-color: var(--color-marrom-cafe);
-    opacity: 0.60; /* Exatamente 60% conforme solicitado */
-}
+/* SEÇÃO HERÓI */
+.hero-home { height: 95vh; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: var(--text-color-light); background-image: url('https://images.unsplash.com/photo-1594744806543-92a21782ebbf?q=80&w=1887&auto=format&fit=crop'); background-size: cover; background-position: center 30%; position: relative; padding: 1rem; }
+.hero-home::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--color-marrom-cafe); opacity: 0.60; }
 .hero-content { position: relative; z-index: 2; }
 .hero-home h1 { margin-bottom: 0; }
 
-/* Seção Hero de Páginas Internas */
-.page-hero { padding: 5rem 1rem; }
-
-/* Botões */
+/* COMPONENTES */
 .btn { display: inline-block; padding: 1rem 2.5rem; background-color: var(--color-accent); color: var(--text-color-light); border-radius: 50px; text-decoration: none; font-family: var(--font-heading); font-weight: 600; transition: all 0.3s ease; border: 2px solid transparent; }
 .btn:hover { transform: scale(1.05); filter: brightness(1.1); }
 .btn.btn-inverted { background-color: var(--color-bege-creme); color: var(--color-marrom-cafe); }
-
-/* Seção 3: Apresentando a Guia */
 .two-columns { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center; }
 .profile-image { width: 100%; height: auto; border-radius: 8px; object-fit: cover; }
-
-/* Seção 4: Serviços */
-.service-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 3rem; }
+.service-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
 .card { background-color: #fff; border: 1px solid rgba(78, 66, 61, 0.1); padding: 2rem; border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s; }
 .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(78, 66, 61, 0.08); }
-.card h3 { margin-bottom: 1rem; }
 .link-styled { color: var(--color-accent); text-decoration: none; font-weight: 700; }
-.link-styled:hover { text-decoration: underline; }
+.check-list { list-style: none; padding-left: 1rem; }
+.check-list li { padding-left: 2rem; position: relative; margin-bottom: 1rem; }
+.check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--color-accent); font-weight: bold; }
+.accordion details { border-bottom: 1px solid rgba(78, 66, 61, 0.2); padding: 1rem 0; }
+.accordion summary { font-family: var(--font-heading); font-weight: 500; font-size: 1.25rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+.accordion summary::after { content: '+'; font-size: 1.5rem; color: var(--color-accent); transition: transform 0.3s ease; }
+.accordion details[open] summary::after { transform: rotate(45deg); }
+.accordion p { margin-top: 1rem; padding: 0 0.5rem; }
 
-/* Rodapé Global */
+/* RODAPÉ */
 .main-footer-section { background-color: var(--color-marrom-cafe); color: var(--text-color-light); padding: 5rem 1rem 2rem 1rem; }
 .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 4rem; text-align: left; }
 .footer-column h4 { font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 1rem; }
 .footer-column p { color: rgba(245, 240, 233, 0.7); }
-.footer-column ul { list-style: none; }
+.footer-column ul { list-style: none; padding: 0; }
 .footer-column ul li a { color: var(--text-color-light); text-decoration: none; transition: color 0.3s; }
 .footer-column ul li a:hover { color: var(--color-accent); }
 .footer-email { color: var(--text-color-light); font-weight: bold; word-break: break-all; }
 .footer-bottom { border-top: 1px solid rgba(245, 240, 233, 0.2); padding-top: 2rem; text-align: center; font-size: 0.9rem; color: rgba(245, 240, 233, 0.6); }
 
-/* Animação de Scroll */
+/* Animação Scroll */
 .reveal-on-scroll { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
 .reveal-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
 
-/* Media Queries para Responsividade */
+/* RESPONSIVIDADE */
 @media (max-width: 820px) {
-    .two-columns { grid-template-columns: 1fr; gap: 2rem; }
-    .column-image { order: -1; text-align: center; } /* Foto fica em cima */
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    .two-columns { grid-template-columns: 1fr; }
+    .column-image { order: -1; text-align: center; }
     .profile-image { max-width: 350px; }
-    .service-cards { grid-template-columns: 1fr; }
-    .main-header nav ul { display: none; } /* Simples para o exemplo, ideal seria menu hamburguer */
+    
+    .nav-toggle { display: block; }
+    .nav-menu { position: fixed; top: 0; right: -100%; width: min(70vw, 300px); height: 100vh; background-color: var(--color-bege-creme); z-index: 999; transition: right 0.4s ease-in-out; display: flex; flex-direction: column; justify-content: center; align-items: center; box-shadow: -5px 0px 15px rgba(0,0,0,0.1); }
+    .nav-menu.is-open { right: 0; }
+    .nav-menu ul { flex-direction: column; gap: 2rem; }
+    .nav-menu ul a { font-size: 1.2rem; }
+    
+    /* Mobile Hamburger Animation */
+    .nav-toggle[aria-expanded="true"] .hamburger { background-color: transparent; }
+    .nav-toggle[aria-expanded="true"] .hamburger::before { transform: translateY(8px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] .hamburger::after { transform: translateY(-8px) rotate(-45deg); }
 }
