@@ -11,23 +11,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <!-- CABEÇALHO GLOBAL -->
     <header class="main-header">
         <nav class="container">
-            <a href="index.html" class="logo">Lenny.</a>
-            <ul>
-                <li><a href="terapia-online.html">Terapia Online</a></li>
-                <li><a href="palestras.html">Palestras</a></li>
-                <li><a href="sobre.html">Sobre Mim</a></li>
-                <li><a href="#contato" class="nav-button">Agendar</a></li>
-            </ul>
+            <a href="index.html" class="logo">Lenny S.</a>
+            <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false"><span class="hamburger"></span></button>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="terapia-online.html">Terapia Online</a></li>
+                    <li><a href="palestras.html">Palestras</a></li>
+                    <li><a href="sobre.html">Sobre Mim</a></li>
+                    <li><a href="#contato" class="nav-button">Agendar</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
     <main>
-
-        <!-- SEÇÃO 1: HERO (Fundo: Bege Creme #F5F0E9) -->
+        <!-- SEÇÃO 1: HERO -->
         <section class="page-hero bg-bege-creme">
             <div class="container narrow text-center">
                 <h1>Olá, sou a Lenny Santos.</h1>
@@ -35,7 +36,7 @@
             </div>
         </section>
 
-        <!-- SEÇÃO 2: MINHA HISTÓRIA (Fundo: Bege Médio #DED6C9) -->
+        <!-- SEÇÃO 2: MINHA HISTÓRIA (COM EFEITO TYPEWRITER) -->
         <section id="minha-historia" class="content-section bg-bege-medio reveal-on-scroll">
              <div class="container two-columns">
                  <div class="column-image">
@@ -43,15 +44,18 @@
                  </div>
                  <div class="column-text">
                     <h2>De fragmentos a um novo todo</h2>
-                    <p>Por muito tempo, acreditei que precisava esconder minhas rachaduras para ser aceita. As experiências difíceis me deixaram com a sensação de estar quebrada, com pedaços que não se encaixavam mais.</p>
-                    <p>Foi no meu próprio processo terapêutico que descobri a filosofia japonesa do Kintsugi: a arte de reparar cerâmica quebrada com ouro, celebrando as cicatrizes em vez de escondê-las. Entendi que a beleza não está na perfeição, mas na história que cada fissura conta.</p>
-                    <p>Essa revelação não só curou a mim, mas deu um novo propósito à minha prática. Hoje, como psicóloga, minha missão é oferecer o espaço e as ferramentas para que você também possa unir seus pedaços, não para voltar a ser quem era, mas para se tornar uma versão mais íntegra, resiliente e autêntica de si mesmo(a).</p>
-                    <p class="signature">Lenny Santos</p>
+                    <div id="typewriter-container">
+                        <div id="typewriter-source" class="visually-hidden">
+                            Minha trajetória na psicologia não começou nos livros, mas na vida. Entendi na pele que nossas feridas, quando acolhidas, se transformam nos nossos maiores portais de força. Minha missão é ser a guia que te ajuda a navegar por essas passagens.<br><br>Acredito em uma terapia que é, acima de tudo, uma parceria. Um espaço seguro onde você pode ser vulnerável, se redescobrir e aprender a reescrever sua história, não para apagar o que aconteceu, mas para dar um novo significado.
+                        </div>
+                        <div id="typewriter-target" aria-hidden="true"></div>
+                        <p id="typewriter-signature" class="signature" style="opacity: 0; transition: opacity 1s ease;">Lenny Santos</p>
+                    </div>
                  </div>
              </div>
         </section>
         
-        <!-- SEÇÃO 3: FORMAÇÃO (Fundo: Bege Creme #F5F0E9) -->
+        <!-- SEÇÃO 3: FORMAÇÃO -->
         <section class="content-section bg-bege-creme reveal-on-scroll">
             <div class="container narrow">
                 <h2 class="text-center">Formação e Abordagem</h2>
@@ -65,7 +69,7 @@
             </div>
         </section>
 
-        <!-- SEÇÃO 4: CTA (Fundo: Marrom Café #4E423D) -->
+        <!-- SEÇÃO 4: CTA -->
         <section class="content-section bg-marrom-cafe text-center reveal-on-scroll">
              <div class="container narrow">
                 <h2>Se a minha história conversa com a sua...</h2>
@@ -73,11 +77,10 @@
                 <a href="#contato" class="btn btn-inverted">Vamos começar essa conversa</a>
             </div>
         </section>
-
     </main>
 
-    <!-- RODAPÉ GLOBAL -->
-    <footer id="contato" class="main-footer-section"> ... O mesmo conteúdo do rodapé do index.html ... </footer>
+    <!-- RODAPÉ GLOBAL (Repetir o mesmo footer do index.html) -->
+    <footer id="contato" class="main-footer-section"> ... </footer>
     <script src="script.js"></script>
 </body>
 </html>
