@@ -126,3 +126,118 @@ p { margin-bottom: 1.2rem; }
     .nav-toggle[aria-expanded="true"] .hamburger::before { transform: translateY(8px) rotate(45deg); }
     .nav-toggle[aria-expanded="true"] .hamburger::after { transform: translateY(-8px) rotate(-45deg); }
 }
+/* --- Pricing Cards Section (Add to style.css) --- */
+.pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    align-items: stretch; 
+}
+
+.pricing-card {
+    background-color: #fff;
+    border: 1px solid rgba(78, 66, 61, 0.15);
+    border-radius: 12px;
+    padding: 2.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* Needed for the badge */
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(78, 66, 61, 0.1);
+}
+
+.pricing-card.popular {
+    border-color: var(--color-accent);
+    border-width: 2px;
+}
+
+/* On larger screens, the popular card is slightly larger */
+@media (min-width: 992px) {
+    .pricing-card.popular {
+        transform: scale(1.05);
+    }
+    .pricing-card.popular:hover {
+        transform: scale(1.05) translateY(-10px);
+    }
+}
+
+.popular-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-accent);
+    color: var(--text-color-light);
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    white-space: nowrap;
+}
+
+.pricing-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.pricing-card .price {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color-dark);
+    margin: 1rem 0 0.25rem 0;
+}
+
+.pricing-card .price-desc {
+    color: #8D8481; /* color-meta */
+    margin-bottom: 2rem;
+    min-height: 40px; 
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: 1.5rem 0;
+    flex-grow: 1; 
+}
+
+.pricing-card ul li {
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.pricing-card ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+.pricing-card .btn {
+    width: 100%;
+}
+
+.btn.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--color-accent);
+    color: var(--color-accent);
+}
+
+.btn.btn-secondary:hover {
+    background-color: var(--color-accent);
+    color: var(--text-color-light) !important;
+}
+
+.payment-info {
+    font-size: 0.9rem;
+    color: #8D8481; /* color-meta */
+}
