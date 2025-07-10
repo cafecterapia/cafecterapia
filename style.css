@@ -68,7 +68,26 @@ p { margin-bottom: 1.2rem; }
 .hamburger::after { bottom: -8px; }
 
 /* SEÇÃO HERÓI */
-.hero-home { height: 95vh; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: var(--text-color-light); background-image: url('https://images.unsplash.com/photo-1594744806543-92a21782ebbf?q=80&w=1887&auto=format&fit=crop'); background-size: cover; background-position: center 30%; position: relative; padding: 1rem; }
+.hero-home { 
+    /* Fallback for older browsers */
+    height: 95vh; 
+    /* Use small viewport height to avoid mobile address bar issues */
+    height: 95svh;
+    /* Dynamic viewport height for modern browsers */
+    height: 95dvh;
+    min-height: 700px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    color: var(--text-color-light); 
+    background-image: url('https://images.unsplash.com/photo-1594744806543-92a21782ebbf?q=80&w=1887&auto=format&fit=crop'); 
+    background-size: cover; 
+    background-position: center 30%; 
+    position: relative; 
+    padding: 1rem; 
+}
 .hero-home::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--color-marrom-cafe); opacity: 0.60; }
 .hero-content { position: relative; z-index: 2; }
 .hero-home h1 { margin-bottom: 0; }
@@ -114,6 +133,19 @@ p { margin-bottom: 1.2rem; }
     .two-columns { grid-template-columns: 1fr; }
     .column-image { order: -1; text-align: center; }
     .profile-image { max-width: 350px; }
+    
+    /* Mobile-specific hero height adjustments */
+    .hero-home {
+        /* More conservative height on mobile to prevent address bar issues */
+        height: 90vh;
+        height: 90svh;
+        height: 90dvh;
+        min-height: 600px;
+        /* Ensure content doesn't overflow on very small screens */
+        max-height: calc(100vh - 4rem);
+        max-height: calc(100svh - 4rem);
+        max-height: calc(100dvh - 4rem);
+    }
     
     .nav-toggle { display: block; }
     .nav-menu { position: fixed; top: 0; right: -100%; width: min(70vw, 300px); height: 100vh; background-color: var(--color-bege-creme); z-index: 999; transition: right 0.4s ease-in-out; display: flex; flex-direction: column; justify-content: center; align-items: center; box-shadow: -5px 0px 15px rgba(0,0,0,0.1); }
