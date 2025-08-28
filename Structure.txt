@@ -1,0 +1,110 @@
+/
+├── .vscode/
+├── public/
+│   └── svgs/
+├── src/
+│   ├── app/
+│   │   ├── (main)/
+```plaintext
+/
+├── .env.local
+├── .eslintrc.json
+├── .gitignore
+├── .prettierignore
+├── .prettierrc
+├── .vscode/
+│   ├── extensions.json
+│   └── tasks.json
+├── README.md
+├── Structure.txt   # This file
+├── next-env.d.ts
+├── next.config.mjs
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── public/
+│   ├── images/
+│   │   └── hold-coffee.jpeg
+│   └── svgs/
+│       ├── .gitkeep
+│       ├── placeholder-cover.svg
+│       └── vintage-tv.svg
+├── sanity/
+│   ├── README.md
+│   ├── sanity.config.ts
+│   └── schemas/
+│       ├── blockContent.ts
+│       ├── ebook.ts
+│       └── index.ts
+├── src/
+│   ├── app/
+│   │   ├── (main)/
+│   │   │   ├── contatos/
+│   │   │   │   └── page.tsx
+│   │   │   ├── ebook/
+│   │   │   │   ├── [slug]/
+│   │   │   │   │   └── page.tsx
+│   │   │   │   └── page.tsx
+│   │   │   ├── palestras/
+│   │   │   │   └── page.tsx
+│   │   │   ├── layout.tsx
+│   │   │   └── page.tsx
+│   │   ├── api/
+│   │   │   └── contact/
+│   │   │       └── route.ts
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── components/
+│   │   ├── animations/
+│   │   ├── ebook/
+│   │   │   ├── EbookReader.tsx
+│   │   │   └── EbookShelf.tsx
+│   │   ├── icons/
+│   │   │   ├── CoffeeCupholderIcon.tsx
+│   │   │   ├── HamburgerTwoIcon.tsx
+│   │   │   └── ToggleIcon.tsx
+│   │   ├── illustrations/
+│   │   │   └── HandmadeCupholder.tsx
+│   │   ├── layout/
+│   │   │   ├── Footer.tsx
+│   │   │   ├── FullscreenMenu.tsx
+│   │   │   ├── Header.tsx
+│   │   │   └── TopHeader.tsx
+│   │   ├── sections/
+│   │   │   ├── ContactForm.tsx
+│   │   │   ├── ContactMe.tsx
+│   │   │   ├── Hero.tsx
+│   │   │   ├── PageIntro.tsx
+│   │   │   ├── Photos.tsx
+│   │   │   ├── PresentMe.tsx
+│   │   │   └── Video.tsx
+│   │   └── ui/
+│   │       ├── Button.tsx
+│   │       ├── Input.tsx
+│   │       ├── RichTextRenderer.tsx
+│   │       └── SectionArc.tsx
+│   ├── constants/
+│   │   └── .gitkeep
+│   ├── context/
+│   │   └── MenuContext.tsx
+│   ├── hooks/
+│   │   └── .gitkeep
+│   ├── lib/
+│   │   ├── cms/
+│   │   │   ├── client.ts
+│   │   │   └── queries.ts
+│   │   ├── gsap.ts
+│   │   └── validations.ts
+│   ├── page.tsx
+│   └── types/
+│       └── cms.ts
+├── tailwind.config.ts
+├── tsconfig.json
+└── tsconfig.tsbuildinfo
+
+Notes:
+- Dynamic route: `src/app/(main)/ebook/[slug]/page.tsx`.
+- API route: `src/app/api/contact/route.ts` (contact form handler).
+- Sanity CMS schemas under `sanity/schemas/`.
+- UI primitives in `src/components/ui/` and layout pieces in `src/components/layout/`.

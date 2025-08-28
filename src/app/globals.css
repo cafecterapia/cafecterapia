@@ -1,0 +1,192 @@
+@import 'tailwindcss';
+
+:root {
+  /* Base colors */
+  --color-primary: #000000;
+  --color-secondary: #ffffff;
+  --color-accent: #404040;
+
+  --color-background: #5e3023;
+  --color-foreground: #000000;
+  --color-muted: #f5f5f5;
+  --color-border: #e5e5e5;
+  --color-bege: #f5ead7; /* soft beige */
+
+  /* Card-specific colors for components that need to stand out */
+  --color-card: #ffffff;
+  --color-card-foreground: #000000;
+
+  /* Brown scale palette */
+  /* Earthy brown scale (700 is the keystone: #5E3023) */
+  --color-brown-50: #f7efea; /* very light warm beige */
+  --color-brown-100: #f0e2da; /* light beige */
+  --color-brown-200: #e2cfc3; /* soft sand */
+  --color-brown-300: #cfaf9d; /* muted clay */
+  --color-brown-400: #b87f63; /* warm terra */
+  --color-brown-500: #935941; /* rich earth */
+  --color-brown-600: #77402d; /* deep soil */
+  --color-brown-700: #5e3023;
+  --color-brown-800: #442018; /* dark kiln */
+  --color-brown-900: #2b130f; /* near-char */
+  --color-brown-950: #170a07; /* almost black with warm hint */
+
+  /* Sage (green desaturated) scale palette */
+  --color-sage-50: #f1f5f3;
+  --color-sage-100: #e3ece7;
+  --color-sage-200: #c5d9cf;
+  --color-sage-300: #a7c6b7;
+  --color-sage-400: #89b39f;
+  --color-sage-500: #6ca087;
+  --color-sage-600: #54806b;
+  --color-sage-700: #3d6050;
+  --color-sage-800: #274034;
+  --color-sage-900: #14211b;
+  --color-sage-950: #0b120f;
+}
+
+/* Global base styles (Tailwind v4: no @tailwind/@layer needed) */
+* {
+  border-color: var(--color-border);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
+
+/* Hide horizontal overflow and reduce rubber-band overscroll revealing background */
+html,
+body {
+  overflow-x: hidden;
+  overscroll-behavior: none; /* prevent showing underlying background on aggressive scroll */
+}
+
+/* Simple utilities used across components */
+.header-height {
+  height: 64px;
+}
+
+.container-px {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+}
+
+.pill {
+  border-radius: 9999px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-card);
+  color: var(--color-card-foreground);
+}
+
+/* Background utility for beige sections */
+.bg-bege {
+  background-color: var(--color-bege);
+}
+
+/* Sage background utilities */
+.bg-sage-50 {
+  background-color: var(--color-sage-50);
+}
+.bg-sage-100 {
+  background-color: var(--color-sage-100);
+}
+.bg-sage-200 {
+  background-color: var(--color-sage-200);
+}
+.bg-sage-300 {
+  background-color: var(--color-sage-300);
+}
+.bg-sage-400 {
+  background-color: var(--color-sage-400);
+}
+.bg-sage-500 {
+  background-color: var(--color-sage-500);
+}
+.bg-sage-600 {
+  background-color: var(--color-sage-600);
+}
+.bg-sage-700 {
+  background-color: var(--color-sage-700);
+}
+.bg-sage-800 {
+  background-color: var(--color-sage-800);
+}
+.bg-sage-900 {
+  background-color: var(--color-sage-900);
+}
+.bg-sage-950 {
+  background-color: var(--color-sage-950);
+}
+
+/* Contrast text helper when on dark sage */
+.text-on-sage-dark {
+  color: var(--color-sage-50);
+}
+
+/* Fullscreen menu overlay */
+.fs-menu {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  /* Use the global background color instead of near-black overlay */
+  background: var(--color-background);
+  color: var(--color-secondary);
+  z-index: 9999;
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.fs-menu.open {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fs-menu a {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
+.fs-menu .icon-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--color-secondary);
+}
+
+/* When the fullscreen menu is open (hamburger shows X), remove the circular border */
+.fs-menu.open .icon-btn {
+  border: none;
+}
+
+/* Hide default Swiper navigation arrows on the ebook reader but keep them functional */
+.ebook-swiper .swiper-button-next,
+.ebook-swiper .swiper-button-prev {
+  opacity: 0; /* visually hide */
+  pointer-events: none; /* prevent mouse targeting of the hidden arrows */
+}
+
+/* Keep keyboard/navigation still functional via Swiper API and external controls */
+.ebook-swiper .swiper-button-next::after,
+.ebook-swiper .swiper-button-prev::after {
+  display: none;
+}

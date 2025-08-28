@@ -1,0 +1,23 @@
+{
+  "name": "Cafecterapia",
+  "short_name": "Cafecterapia",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "description": "Cafecterapia - conteúdo e palestras.",
+  "icons": [
+    {
+      "src": "/svgs/vintage-tv.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/logobranca.avif",
+      "sizes": "512x512",
+      "type": "image/avif",
+      "purpose": "any"
+    }
+  ]
+}

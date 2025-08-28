@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Vintage TV with legs - scalable 16:9 frame. The screen area is a transparent cutout. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Moldura de TV vintage">
+  <defs>
+    <!-- Screen cutout mask: white = visible body, black = transparent screen -->
+    <mask id="screen-cut">
+      <!-- Body visible by default -->
+      <rect x="0" y="0" width="1600" height="900" fill="white"/>
+      <!-- Transparent screen area (16:9 centered) -->
+      <rect x="160" y="90" width="1280" height="720" rx="24" ry="24" fill="black"/>
+    </mask>
+    <linearGradient id="bodyPaint" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4b5563"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+    <linearGradient id="glassRim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9ca3af"/>
+      <stop offset="100%" stop-color="#6b7280"/>
+    </linearGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c08457"/>
+      <stop offset="100%" stop-color="#8b5e34"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Antennas -->
+  <g stroke="#9ca3af" stroke-width="10" stroke-linecap="round">
+    <line x1="800" y1="30" x2="700" y2="-120" />
+    <line x1="800" y1="30" x2="900" y2="-120" />
+    <circle cx="700" cy="-120" r="10" fill="#e5e7eb" stroke="none"/>
+    <circle cx="900" cy="-120" r="10" fill="#e5e7eb" stroke="none"/>
+  </g>
+
+  <!-- TV body with screen hole -->
+  <g filter="url(#softShadow)">
+    <rect x="100" y="60" width="1400" height="780" rx="48" ry="48" fill="url(#bodyPaint)" mask="url(#screen-cut)"/>
+    <!-- Body outline -->
+    <rect x="100" y="60" width="1400" height="780" rx="48" ry="48" fill="none" stroke="#111827" stroke-width="8"/>
+  </g>
+
+  <!-- Screen rim -->
+  <rect x="160" y="90" width="1280" height="720" rx="28" ry="28" fill="none" stroke="url(#glassRim)" stroke-width="22"/>
+  <rect x="170" y="100" width="1260" height="700" rx="24" ry="24" fill="none" stroke="#111827" stroke-opacity="0.2" stroke-width="8"/>
+
+  <!-- Knobs and speaker grill on the right side frame area -->
+  <g transform="translate(1290,160)">
+    <circle cx="120" cy="80" r="30" fill="#d1d5db" stroke="#111827" stroke-width="6"/>
+    <circle cx="120" cy="180" r="22" fill="#9ca3af" stroke="#111827" stroke-width="6"/>
+    <rect x="80" y="260" width="80" height="200" rx="10" fill="#111827" fill-opacity="0.5"/>
+    <g stroke="#6b7280" stroke-width="6" stroke-linecap="round">
+      <line x1="92" y1="280" x2="148" y2="280"/>
+      <line x1="92" y1="305" x2="148" y2="305"/>
+      <line x1="92" y1="330" x2="148" y2="330"/>
+      <line x1="92" y1="355" x2="148" y2="355"/>
+      <line x1="92" y1="380" x2="148" y2="380"/>
+      <line x1="92" y1="405" x2="148" y2="405"/>
+      <line x1="92" y1="430" x2="148" y2="430"/>
+      <line x1="92" y1="455" x2="148" y2="455"/>
+    </g>
+  </g>
+
+  <!-- Legs -->
+  <g>
+    <!-- Left leg -->
+    <path d="M260,840 L220,900" stroke="url(#wood)" stroke-width="22" stroke-linecap="round"/>
+    <rect x="200" y="892" width="60" height="14" rx="7" fill="#6b4026"/>
+
+    <!-- Right leg -->
+    <path d="M1340,840 L1380,900" stroke="url(#wood)" stroke-width="22" stroke-linecap="round"/>
+    <rect x="1360" y="892" width="60" height="14" rx="7" fill="#6b4026"/>
+  </g>
+
+  <!-- Optional subtle vignette around the screen hole so underlying content blends nicely -->
+  <rect x="160" y="90" width="1280" height="720" rx="24" ry="24" fill="none" stroke="#000000" stroke-opacity="0.08" stroke-width="24"/>
+</svg>
