@@ -1,17 +1,17 @@
+import React from 'react';
 import SectionArc from '../ui/SectionArc';
 
 export default function PresentMe() {
   return (
-    <section className="relative bg-bege pb-12 pt-6">
-      {/* Decorative arc background */}
-      <div className="absolute -top-[9.89rem] left-0 right-0 pointer-events-none select-none">
-        <SectionArc variant="convex" fill="var(--color-bege, #F5EFE6)" height={160} />
-      </div>
-      <div className="relative z-10 mx-auto max-w-5xl px-6">
-        <p className="text-3xl md:text-3xl font-semibold leading-snug text-muted-foreground text-center">
-          Psicóloga, Palestrante & Escritora
-        </p>
-      </div>
-    </section>
+    <div className="relative -mt-40 md:-mt-56" aria-labelledby="presentme-heading">
+      <SectionArc height={300} maxApex={200} minApex={140} fill="var(--color-bege)">
+        <h2
+          id="presentme-heading"
+          className="text-center text-[clamp(2.25rem,6vw,4.25rem)] font-bold tracking-tight text-[var(--color-brown-900)] leading-tight"
+        >
+          Psicologa, Escritora & Palestrante
+        </h2>
+      </SectionArc>
+    </div>
   );
 }

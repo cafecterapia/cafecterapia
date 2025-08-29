@@ -136,47 +136,7 @@ body {
   color: var(--color-sage-50);
 }
 
-/* Fullscreen menu overlay */
-.fs-menu {
-  position: fixed;
-  inset: 0; /* top:0; right:0; bottom:0; left:0 */
-  width: 100vw;
-  height: 100vh;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  /* Use the global background color instead of near-black overlay */
-  background: var(--color-background);
-  color: var(--color-secondary);
-  z-index: 9999;
-  transition:
-    opacity 220ms ease,
-    transform 220ms ease;
-  opacity: 0;
-  transform: translateY(8px);
-}
-
-.fs-menu.open {
-  display: flex;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.fs-menu a {
-  color: var(--color-secondary);
-  text-decoration: none;
-}
-
-.fs-menu .icon-btn {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: var(--color-secondary);
-}
-
-/* When the fullscreen menu is open (hamburger shows X), remove the circular border */
-.fs-menu.open .icon-btn {
-  border: none;
-}
+/* (legacy) Removed .fs-menu fullscreen overlay styles after redesign to compact expanding rounded square menu */
 
 /* Hide default Swiper navigation arrows on the ebook reader but keep them functional */
 .ebook-swiper .swiper-button-next,

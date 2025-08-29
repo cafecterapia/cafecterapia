@@ -1,39 +1,35 @@
-import Hero from '@/components/sections/Hero';
-import ContactForm from '@/components/sections/ContactForm';
-import Image from 'next/image';
+import Pill from '../../../components/ui/Pill';
+import Link from 'next/link';
 
 export default function ContatosPage() {
   return (
-    <>
-      {/* Reduced-height rectangular hero */}
-      <Hero title="Contatos" height={240} />
+    <main className="min-h-screen bg-background flex items-center justify-center">
+      <section className="w-full max-w-2xl px-6 py-20 text-center">
+        <h1 className="font-serif text-[3.75rem] md:text-[5.5rem] leading-none">Diga olá</h1>
 
-      {/* Two-column layout: photo (left) + contact form (right) */}
-      <section className="mx-auto w-full max-w-6xl px-6 py-12">
-        <div className="grid gap-10 md:grid-cols-2 items-start">
-          {/* Photo */}
-          <div className="relative w-full aspect-[4/5] md:aspect-auto md:h-full overflow-hidden rounded-lg shadow-md">
-            <Image
-              src="/images/hold-coffee.jpeg"
-              alt="Foto ilustrativa segurando uma xícara de café"
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
-            />
-          </div>
-          {/* Contact form */}
-          <div className="space-y-6">
-            <header>
-              <h2 className="text-2xl font-semibold tracking-tight">Fale Comigo</h2>
-              <p className="mt-2 text-sm opacity-80 max-w-prose">
-                Preencha o formulário e retornarei o mais breve possível.
-              </p>
-            </header>
-            <ContactForm />
-          </div>
+        <p className="uppercase tracking-widest mt-4 text-sm text-muted-foreground">
+          Estamos ansiosos para ouvir você
+        </p>
+
+        <div className="mt-8 flex items-center justify-center gap-4">
+          <Pill as="button" className="px-6 py-3">
+            Email <span aria-hidden>↘</span>
+          </Pill>
+
+          <Pill as="button" className="px-6 py-3 bg-transparent border-black/20">
+            Sociais <span aria-hidden>↘</span>
+          </Pill>
+        </div>
+
+        <div className="mt-10">
+          <Link
+            href="mailto:cafecterapia@gmail.com"
+            className="text-3xl md:text-5xl font-medium inline-block"
+          >
+            cafecterapia@gmail.com
+          </Link>
         </div>
       </section>
-    </>
+    </main>
   );
 }

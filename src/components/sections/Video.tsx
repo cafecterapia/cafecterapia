@@ -1,7 +1,5 @@
 'use client';
 
-import Image from 'next/image';
-
 export default function Video() {
   return (
     <section className="py-36 bg-sage-900 text-on-sage-dark">
